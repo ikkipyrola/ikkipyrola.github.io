@@ -1,0 +1,73 @@
+body 
+{
+  background: #DCD4E1;
+  margin: 0 auto;
+  font-family: Catamaran;
+}
+
+p
+{
+  color: #002b0d;
+  opacity: 50%;
+}
+
+h1
+{
+  font-family: Cairo;
+  color: #00211C;
+}
+
+.flex-container 
+{
+  padding-top: 80px;
+  display: flex;
+  z-index: 1;
+  justify-content: space-evenly;
+}
+
+.flex-item
+{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header
+{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #00211C;
+  z-index: 2;
+
+  /* rework these: */
+  height: 80px;
+}
+
+.header img
+{
+  width: 50px;
+  padding: 5px;
+  padding-left: 48%;
+}
+
+@media screen and (max-width:940px) 
+{
+  .flex-container 
+  { 
+    flex-wrap: wrap;  
+  }
+
+  .flex-item:first-child 
+  { 
+    flex-basis: 100%; 
+  }
+}
+
+.foot
+{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #00211C;
+  height: 20px;
+}
