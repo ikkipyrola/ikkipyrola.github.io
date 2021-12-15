@@ -1,3 +1,13 @@
+/*
+
+Next
+
+In larger sizes, make the main body scroll overflow, ie. tie it to the size of #face
+In smaller sizes, figure out how to eliminate gap between header and #face without trickery
+Change #title to a class rather than id... and make it work
+
+*/
+
 body 
 {
   background: #DCD4E1;
@@ -9,12 +19,14 @@ p
 {
   color: #002b0d;
   opacity: 50%;
+  padding-right: 50px;
 }
 
-h1
+#title
 {
   font-family: Cairo;
   color: #00211C;
+  line-height: 8px;
 }
 
 .flex-container 
@@ -27,6 +39,8 @@ h1
 
 .flex-item
 {
+  width: fit-content;
+  height: auto;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -38,16 +52,36 @@ h1
   width: 100%;
   background: #00211C;
   z-index: 2;
-
-  /* rework these: */
-  height: 80px;
 }
 
-.header img
+@media screen and (min-width:940px) 
 {
-  width: 50px;
-  padding: 5px;
-  padding-left: 48%;
+  .header
+  {
+    height: 80px;
+  }
+
+  .header img
+  {
+    width: 50px;
+    padding: 5px;
+    padding-left: 48%;
+  }
+
+  #face
+  {
+    min-width: 480px;
+    background-image: url("vertical.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-size: auto 100%; */
+  }
+
+  #main
+  {
+    margin: 50px;
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width:940px) 
@@ -57,9 +91,36 @@ h1
     flex-wrap: wrap;  
   }
 
-  .flex-item:first-child 
+  .flex-item 
   { 
     flex-basis: 100%; 
+  }
+
+  .header
+  {
+    height: 60px;
+  }
+
+  .header img
+  {
+    width: 40px;
+    padding: 2px;
+    padding-left: 46%;
+  }
+
+  #face
+  {
+    margin-top: -20px; /* FIX THIS: leaves a gap the size of full height header */
+    min-height: 200px;
+    background-image: url("horizontal.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  #main
+  {
+    margin: 30px;
+    margin-top: 20px;
   }
 }
 
